@@ -418,8 +418,10 @@ if (loginBtn) {
 
       if (verifyData.verified) {
         await logEvent("login_success", "login", true, null);
-
         showAlert("Sign-in successful. Task complete.", "success");
+        setTimeout(() => {
+          window.location.href = "/dashboard.html";
+        }, 2000);
       } else {
         const errorMessage =
           verifyData.error || verifyData.details || "Sign-in failed.";
